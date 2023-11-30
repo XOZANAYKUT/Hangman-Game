@@ -4,3 +4,63 @@
 import os
 import random
 from colorama import Fore, Style
+
+# Hangman stages for drawing the gallows
+hangman_stages = [
+    """
+       -----
+       |   |
+           |
+           |
+           |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+           |
+           |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+       |   |
+           |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|   |
+           |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|\\ |
+           |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|\\ |
+      /    |
+           |
+    """,
+    """
+       -----
+       |   |
+       O   |
+      /|\\ |
+      / \\ |
+           |
+    """
+]
