@@ -101,7 +101,7 @@ def choose_item(category):
 def ask_question(chosen_item):
     """Asks a general knowledge or computer science question and returns True if the answer is correct, False otherwise."""
     if 'question' in chosen_item:
-        user_answer = input(f"Enter your answer: ").lower()
+        user_answer = input(f"Enter your answer:\n").lower()
 
         if user_answer == chosen_item['answer']:
             print(Fore.GREEN + "Congratulations! You answered the question correctly." + Style.RESET_ALL)
@@ -130,7 +130,7 @@ def choose_category():
     
     while True:
         try:
-            choice = int(input("Enter your choice as a number (1 or 2): "))
+            choice = int(input("Enter your choice as a number (1 or 2): \n"))
             if choice in [1, 2]:
                 return choice
             else:
@@ -165,7 +165,7 @@ def play_hangman():
             print(Fore.GREEN + f"Congratulations! You correctly guessed the word: {chosen_item['answer']}" + Style.RESET_ALL)
             break
 
-        guess = input("Guess a letter: ").lower()
+        guess = input("Guess a letter: \n").lower()
 
         if guess.isalpha() and len(guess) == 1:
             if guess in guessed_letters:
@@ -187,7 +187,7 @@ def play_hangman():
             draw_hangman(incorrect_attempts)
             print("Invalid input. Please enter a letter.")
 
-    play_again_input = input("Do you want to play again? (Y)es or (N)o? >: ").lower()
+    play_again_input = input("Do you want to play again? (Y)es or (N)o? >: \n").lower()
     return play_again_input == "y"
 
 if __name__ == "__main__":
