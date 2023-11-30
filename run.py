@@ -146,3 +146,58 @@ def choose_category():
                 print("Invalid choice. Please enter 1 or 2.")
         except ValueError:
             print("Invalid input. Please enter a number.")
+def play_hangman():
+    """Plays the Hangman game."""
+    category = choose_category()
+
+    clear_screen()
+    print(Fore.GREEN + "WELCOME TO HANGMAN!" + Style.RESET_ALL)
+  
+    if category == 1:
+        print("Hint: General Knowledge")
+    else:
+        print("Hint: Computer Science")
+
+    print("Let the game begin...\n")
+
+    guessed_letters = set()
+    incorrect_attempts = 0
+
+    chosen_item = choose_item(category)
+
+    while True:
+        draw_hangman(incorrect_attempts)
+        print_question_and_word(chosen_item, guessed_letters)
+
+        if set(chosen_item.get('answer', '')) == guessed_letters:
+            print(Fore.GREEN + f"Congratulations! You correctly guessed the word: {chosen_item['answer']}" + Style.RESET_ALL)
+            break
+
+        guess = input("Guess a letter: ").lower()
+
+        if guess.isalpha() and len(guess) == 1:
+            if guess in guessed_letters:
+                print("You already guessed this letter. Try another one.")
+            elif guess in chosen_item.get('answer', ''):
+                guessed_letters.add(guess)
+                if set(chosen_item.get('answer', '')) == guessed_letters:
+                    print(Fore.GREEN + f"Congratulations! You correctly guessed the word: {chosen_item['answer']}" + Style.RESET_ALL)
+                    break
+            else:
+                incorrect_attempts += 1
+                draw_hangman(incorrect_attempts)
+
+                if incorrect_attempts == len(hangman_stages) - 1:
+                    print(f"{Fore.RED}Hangman hanged! You lost. The correct word: {chosen_item.get('answer', '')}{Style.RESET_ALL}")
+                    break
+        else:
+            incorrect_attempts += 1
+            draw_hangman(incorrect_attempts)
+            print("Invalid input. Please enter a letter.")
+
+    play_again_input = input("Do you want to play again? (Y)es or (N)o? >: ").lower()
+    return play_again_input == "y"
+
+if __name__ == "__main__":
+    while play_hangman():
+        pass
