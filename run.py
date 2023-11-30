@@ -86,4 +86,18 @@ def choose_item(category):
             {"question": "What is the largest planet in our solar system?", "answer": "jupiter", "hint": "Named after the king of the gods"},
             {"question": "In which year did World War II end?", "answer": "1945", "hint": "The mid-20th century"},
             {"question": "What is the currency of Japan?", "answer": "yen", "hint": "Three letters, starts with 'y'"}
-        ]       
+        ]
+        elif category == 2:  # If Computer Science category is chosen
+        items = [
+            {"question": "What is an algorithm?", "answer": "a step-by-step procedure for calculations", "hint": "Used in problem-solving"},
+            {"question": "What does 'HTML' stand for?", "answer": "hypertext markup language", "hint": "Used for creating web pages"},
+            {"question": "Who is known as the father of modern computer science?", "answer": "alan turing", "hint": "Enigma codebreaker"},
+            {"question": "What is the purpose of the 'elif' keyword in Python?", "answer": "else if", "hint": "Used in conditional statements"},
+            {"question": "What is the function of RAM in a computer?", "answer": "temporary data storage", "hint": "Volatility"}
+        ]
+    else:
+        raise ValueError("Invalid category choice.")
+
+    chosen_item = random.choice(items)
+    return chosen_item
+          
