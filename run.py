@@ -81,7 +81,7 @@ def choose_item(category):
             {"question": "What is the capital of France?", "answer": "paris", "hint": "The city of love"},
             {"question": "Who wrote 'Romeo and Juliet'?", "answer": "shakespeare", "hint": "A famous playwright"},
             {"question": "What is the largest planet in our solar system?", "answer": "jupiter", "hint": "Named after the king of the gods"},
-            {"question": "In which year did World War II end?", "answer": "1945", "hint": "The mid-20th century"},
+            {"question": "What is the largest mammal on Earth?", "answer": "blue whale", "hint": "It's a marine animal"},
             {"question": "What is the currency of Japan?", "answer": "yen", "hint": "Three letters, starts with 'y'"}
         ]
     elif category == 2:  # If Computer Science category is chosen
