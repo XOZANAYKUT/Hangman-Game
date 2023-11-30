@@ -115,4 +115,10 @@ def ask_question(chosen_item):
             return False
     else:
         # Only displays the question in the Computer Science category, no word guessing
-        return True          
+        return True   
+def draw_hangman(incorrect_attempts):
+    """Draws hangman stages based on the number of incorrect attempts."""
+    if incorrect_attempts < len(hangman_stages):
+        print(hangman_stages[incorrect_attempts])
+    else:
+        print(Fore.RED + "Error: Exceeded the list of incorrect guess stages." + Style.RESET_ALL)              
