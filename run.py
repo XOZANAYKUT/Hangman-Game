@@ -76,3 +76,14 @@ def print_question_and_word(chosen_item, guessed_letters):
     if 'answer' in chosen_item:
         displayed_word = ''.join(letter if letter in guessed_letters else '_' for letter in chosen_item['answer'])
         print(f"Word: {displayed_word}")    
+
+def choose_item(category):
+    """Chooses and returns a general knowledge or computer science item."""
+    if category == 1:  # If General Knowledge category is chosen
+        items = [
+            {"question": "What is the capital of France?", "answer": "paris", "hint": "The city of love"},
+            {"question": "Who wrote 'Romeo and Juliet'?", "answer": "shakespeare", "hint": "A famous playwright"},
+            {"question": "What is the largest planet in our solar system?", "answer": "jupiter", "hint": "Named after the king of the gods"},
+            {"question": "In which year did World War II end?", "answer": "1945", "hint": "The mid-20th century"},
+            {"question": "What is the currency of Japan?", "answer": "yen", "hint": "Three letters, starts with 'y'"}
+        ]       
