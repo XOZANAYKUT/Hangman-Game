@@ -100,4 +100,19 @@ def choose_item(category):
 
     chosen_item = random.choice(items)
     return chosen_item
-          
+def ask_question(chosen_item):
+    """Asks a general knowledge or computer science question and returns True if the answer is correct, False otherwise."""
+    if 'question' in chosen_item:
+        user_answer = input(f"Enter your answer: ").lower()
+
+        if user_answer == chosen_item['answer']:
+            print(Fore.GREEN + "Congratulations! You answered the question correctly." + Style.RESET_ALL)
+            return True
+        else:
+            print(Fore.RED + "Sorry, wrong answer." + Style.RESET_ALL)
+            print("\nHint: " + chosen_item['hint'])
+            print_question_and_word(chosen_item, set())
+            return False
+    else:
+        # Only displays the question in the Computer Science category, no word guessing
+        return True          
