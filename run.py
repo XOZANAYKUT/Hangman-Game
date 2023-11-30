@@ -65,9 +65,11 @@ hangman_stages = [
     """
 ]
 
+
 def clear_screen():
     """Clears the terminal screen."""
     os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def print_question_and_word(chosen_item, guessed_letters):
     """Displays the question and the word with correctly guessed letters."""
@@ -76,6 +78,7 @@ def print_question_and_word(chosen_item, guessed_letters):
     if 'answer' in chosen_item:
         displayed_word = ''.join(letter if letter in guessed_letters else '_' for letter in chosen_item['answer'])
         print(f"Word: {displayed_word}")    
+
 
 def choose_item(category):
     """Chooses and returns a general knowledge or computer science item."""
@@ -100,6 +103,8 @@ def choose_item(category):
 
     chosen_item = random.choice(items)
     return chosen_item
+
+
 def ask_question(chosen_item):
     """Asks a general knowledge or computer science question and returns True if the answer is correct, False otherwise."""
     if 'question' in chosen_item:
@@ -116,9 +121,28 @@ def ask_question(chosen_item):
     else:
         # Only displays the question in the Computer Science category, no word guessing
         return True   
+
+
 def draw_hangman(incorrect_attempts):
     """Draws hangman stages based on the number of incorrect attempts."""
     if incorrect_attempts < len(hangman_stages):
         print(hangman_stages[incorrect_attempts])
     else:
-        print(Fore.RED + "Error: Exceeded the list of incorrect guess stages." + Style.RESET_ALL)              
+        print(Fore.RED + "Error: Exceeded the list of incorrect guess stages." + Style.RESET_ALL) 
+
+
+def choose_category():
+    """Asks the user to choose the category of the word."""
+    print("Choose a category for the word:")
+    print("1. General Knowledge")
+    print("2. Computer Science")
+    
+    while True:
+        try:
+            choice = int(input("Enter your choice as a number (1 or 2): "))
+            if choice in [1, 2]:
+                return choice
+            else:
+                print("Invalid choice. Please enter 1 or 2.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
