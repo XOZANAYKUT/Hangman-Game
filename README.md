@@ -46,3 +46,24 @@ ___
 - I passed the code through a PEP8 linter and verified that there were no issues
 - Tested on my local terminal and Code Institute Heroku terminal
 ___
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+• Steps for deployment:
+
+• Fork or clone this repository
+
+• Create a new Heroku app
+
+• Set the buildbacks to Python and NodeJS in that order
+
+• Link the Heroku app to the repository
+
+• Click on [Deploy](https://hangman-game2-bebf4ae175e2.herokuapp.com/)
+___
+Credits
+
+• Code Institute for the deployment terminal
+
+• Wikipedia for the details of the Hangman game
