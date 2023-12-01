@@ -21,7 +21,7 @@ ___
 ![Hangman](media/hang.png)
 ![Hangman](media/hang4.png)
 ![Hangman](media/Hang5.png)
-
+![Hangman](media/hang6.png)
 ## Dependencies
 - `colorama` library for colored console output. Install it using:
 
