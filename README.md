@@ -1,32 +1,48 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Hangman Game](https://hangman-game2-bebf4ae175e2.herokuapp.com/)
+Welcome, Hangman Game
 
-Welcome,
+Hangman is a pencil and paper guessing game that can be played with two or more players. A player tries to guess a word, phrase or sentence by suggesting letters or numbers in turn. For each letter or number the player does not know, a piece of the gallows is drawn. If the player knows all the letters or numbers, they win the game; if they don't and the drawing of the gallows is completed, they lose.
+___
+![mock](media/mock.png)
+___
+## How to play
+- Run the `Hangman_Game.py` file.
+- Choose a category (General Knowledge or Computer Science).
+- Guess the word or answer the question correctly to win.
+- Enjoy the game!
+___
+## Random board generation
+### General Knowledge 
+![Hangman](media/hang.png)
+![Hangman](media/hangman2.png)
+![Hangman](media/hang3.png)
+___
+### Computer Science
+![Hangman](media/hang.png)
+![Hangman](media/hang4.png)
+![Hangman](media/Hang5.png)
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Dependencies
+- `colorama` library for colored console output. Install it using:
 
-## Reminders
+    ```bash
+    pip install colorama
+    ```
+___
+## Instructions
+- The game supports two categories: General Knowledge and Computer Science.
+- For each category, you can guess letters to reveal the hidden word or answer the question.
+- Incorrect guesses lead to the drawing of the hangman, with a total of 6 incorrect attempts allowed.
+___
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## Features Left to Implement
 
-## Creating the Heroku app
+- Add skip question button
+___
+## Validator Testing
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### I tested this project manually by doing the following:
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+- I passed the code through a PEP8 linter and verified that there were no issues
+- Tested on my local terminal and Code Institute Heroku terminal
+___
