@@ -85,10 +85,12 @@ def choose_item(category):
             {"question": "What is the currency of Japan?", "answer": "yen", "hint": "Three letters, starts with 'y'"}
         ]
     elif category == 2:  # If Computer Science category is chosen
-        items =  {"question": "What is a variable?", "answer": "identifier", "hint": "Used to store data"},
+        items = [
+    {"question": "What is a variable?", "answer": "identifier", "hint": "Used to store data"},
     {"question": "What is the file extension for a Python script?", "answer": "py", "hint": "Two letters"},
     {"question": "Who developed the C programming language?", "answer": "kernighan", "hint": "Co-author of 'The C Programming Language'"},
     {"question": "What is the primary purpose of a compiler?", "answer": "translate", "hint": "Converts high-level code to machine code"},
+        ]
     else:
         raise ValueError("Invalid category choice.")
 
